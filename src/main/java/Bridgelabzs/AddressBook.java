@@ -42,9 +42,6 @@ public class AddressBook {
 
     }
 
-
-
-
     public void displayBook(AddressBook passedAddressBook) {
 
         System.out.printf("Address Book Name is %s. \n\n", passedAddressBook.currentAddressBookName);
@@ -54,7 +51,9 @@ public class AddressBook {
         for (int i = 0 ; i<passedAddressBook.currentAddressBook.size(); i++) {
             System.out.printf("Contact %d :\n",i+1);
 
-            //How can use the following function w/o having to make a blank object to access it?
+			/*Query - How can I use the displayContact() function
+			w/o having to make a blank object to access it?*/
+
             blankContact.displayContact(passedAddressBook.currentAddressBook.get(i));
 
             System.out.printf("\n\n----------------------------------------------------\n\n");
