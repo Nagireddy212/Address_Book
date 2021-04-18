@@ -12,11 +12,9 @@ public class AddressBookMain {
         AddressBook book1 = new AddressBook("Book1");
         book1.addContact(sc);
         book1.addContact(sc);
-
         book1.displayBook(book1);
-
-
-
+        book1.modifyContact(sc, book1);
+        book1.displayBook(book1);
     }
 
 }
