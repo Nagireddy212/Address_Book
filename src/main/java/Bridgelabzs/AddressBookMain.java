@@ -22,7 +22,6 @@ public class AddressBookMain {
         book1.deleteContact(sc, book1);
         book1.displayBook(book1);
 
-
     }
 
 }
