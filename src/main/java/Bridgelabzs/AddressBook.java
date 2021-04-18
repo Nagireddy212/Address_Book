@@ -3,7 +3,7 @@ package Bridgelabzs;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class AddressBook {
+public class AddressBook  implements IAddressBook{
 
     String currentAddressBookName;
     ArrayList<Contact> currentAddressBook = new ArrayList<Contact>();
@@ -23,7 +23,6 @@ public class AddressBook {
         System.out.printf("\n\n----------------------------------------------------\n\n");
         for (int i = 0 ; i<passedAddressBook.currentAddressBook.size(); i++) {
             System.out.printf("Contact %d :\n",i+1);
-
             blankContact.displayContact(passedAddressBook.currentAddressBook.get(i));
 
             System.out.printf("\n\n----------------------------------------------------\n\n");
@@ -62,6 +61,8 @@ public class AddressBook {
 
 
     public void addContact (Scanner sc) {
+
+        System.out.printf("You are in %s :\n",this.currentAddressBookName);
         System.out.println("Enter Details of the new Contact you want to add -");
 
         Contact newContact = createContact(sc);
@@ -74,7 +75,7 @@ public class AddressBook {
     public int findContact(Scanner sc) {
 
         System.out.printf("\n\n----------------------------------------------------\n\n");
-
+        System.out.printf("You are in %s :\n",this.currentAddressBookName);
         System.out.println("Please Enter First Name of Contact to find :");
         String fName = sc.next();
 
@@ -103,6 +104,7 @@ public class AddressBook {
 
     public void modifyContact(Scanner sc, AddressBook book1) {
 
+        System.out.printf("You are in %s :\n",this.currentAddressBookName);
         System.out.println("We will update contact now.");
 
         int index = book1.findContact(sc);
@@ -123,6 +125,7 @@ public class AddressBook {
 
     public void deleteContact(Scanner sc, AddressBook book1) {
 
+        System.out.printf("You are in %s :\n",this.currentAddressBookName);
         System.out.println("We will delete contact now.");
 
         int index = book1.findContact(sc);
@@ -136,5 +139,6 @@ public class AddressBook {
 
         }
     }
+
 
 }
