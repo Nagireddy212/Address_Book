@@ -13,8 +13,16 @@ public class AddressBookMain {
         book1.addContact(sc);
         book1.addContact(sc);
         book1.displayBook(book1);
+
+
         book1.modifyContact(sc, book1);
         book1.displayBook(book1);
+
+
+        book1.deleteContact(sc, book1);
+        book1.displayBook(book1);
+
+
     }
 
 }

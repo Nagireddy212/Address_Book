@@ -24,9 +24,6 @@ public class AddressBook {
         for (int i = 0 ; i<passedAddressBook.currentAddressBook.size(); i++) {
             System.out.printf("Contact %d :\n",i+1);
 
-			/*Query - How can I use the displayContact() function
-			w/o having to make a blank object to access it?*/
-
             blankContact.displayContact(passedAddressBook.currentAddressBook.get(i));
 
             System.out.printf("\n\n----------------------------------------------------\n\n");
@@ -105,16 +102,37 @@ public class AddressBook {
 
 
     public void modifyContact(Scanner sc, AddressBook book1) {
+
+        System.out.println("We will update contact now.");
+
         int index = book1.findContact(sc);
-        if (index == -999) {
+        if(index == -999) {
             return;
-        } else {
+        }
+        else {
             System.out.println("Enter the updated Contact Details : ");
 
             Contact updatedContact = createContact(sc);
             book1.currentAddressBook.set(index, updatedContact);
 
-            System.out.println("Enter the updated Contact Details : ");
+            System.out.println("Contact Details have been updated.");
+
+        }
+    }
+
+
+    public void deleteContact(Scanner sc, AddressBook book1) {
+
+        System.out.println("We will delete contact now.");
+
+        int index = book1.findContact(sc);
+        if(index == -999) {
+            return;
+        }
+        else {
+
+            book1.currentAddressBook.remove(index);
+            System.out.println("Contact has been deleted.");
 
         }
     }
